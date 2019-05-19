@@ -10,7 +10,7 @@ EXPOSE 25565/udp
 WORKDIR /data
 
 # Download server file if provided
-RUN if [ "x$URL" = "x" ] ; then curl $URL --output $JAR ; else echo "No download url provided, continuing..." ; fi
+RUN curl $URL --output $JAR
 
 # Configure minecraft server
 CMD java -Xmx$XMX -Xms$XMS -jar $JAR nogui
