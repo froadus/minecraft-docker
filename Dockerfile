@@ -10,8 +10,7 @@ EXPOSE 25565/udp
 WORKDIR /data
 
 # Download minecraft server file from provided url and rename to $JAR
-RUN apt-get update && \
-    apt-get -y install curl && \
+RUN apk --no-cache add curl && \
     curl $URL --output $JAR
 
 # Configure minecraft server
