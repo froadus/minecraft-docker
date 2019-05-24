@@ -1,4 +1,0 @@
-puts "<<< pid=[pid] >>>"
-spawn {*}$argv
-trap {send "stop\n"} SIGTERM
-interact
